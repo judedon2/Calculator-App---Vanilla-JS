@@ -1,0 +1,154 @@
+* {
+	/* Starts right from the edge - top left */
+	box-sizing: border-box;
+	margin: 0;
+}
+
+.image {
+	/* Images Settings */
+	background-image: url(images/background.jpeg);
+	background-image: url('https://image_address.com');
+	background-position: center;
+	background-repeat: no-repeat;
+	/* Image Size */
+	background-size: cover, 10px 10px;
+	/* Position on page - absolute - set to .body */
+	background-position: 10px 10px;
+	/* Images needs border */
+	background-origin: border-box, content-box;
+	/* Porition of page height */
+	min-height: 100vh;
+	/* Porition of page width */
+	width: 100%;
+	/* TIP: GRADIENT AND BOX SHADOW USE GENERATOR  */
+	/*  */
+	overflow: auto;
+	/*  */
+	/*  */
+}
+
+/* Display Setting */
+.parent_div {
+	/* Horizontal */
+	display: flex;
+	flex-direction: column, row;
+	/* Wrap elements to next row */
+	flex-wrap: wrap;
+	/* X - drection, center, end, evenly */
+	justify-content: flex-end, center, space-between, space-evenly;
+	/* Y - drection, center, span entire height */
+	align-items: center, stretch;
+	/* span entire width */
+	flex-grow: 1;
+	/* Like Flex - but applied to Child - and required to change height and width  */
+	display: inline-block;
+	/* Padding - content close to edge */
+	padding: 0;
+	/* Margin - cotnainer next to element */
+	margin: 0;
+	/* Altneraive  - no spacing */
+	float: right;
+
+	/* PARENET */
+	position: relative;
+	/* CHILD positions */
+	position: absolute;
+	bottom: 0;
+	right: 2px;
+	left: 0;
+
+	/* CONTENT/TEXT - FIT INTO ELEMENT */
+	overflow: auto, hidden;
+	overflow-x: auto, hidden;
+	overflow-y: auto, hidden;
+}
+
+/* FONTS */
+.text {
+	/* If font is defined in parent, body, * - used inherit*/
+	font-family: inherit;
+	/* Ul and LI  */
+	list-style-type: none;
+	/* Text */
+	text-transform: uppercase;
+	text-decoration: underline, line-through, overline underline;
+	text-align: start, end, left, right, center, justify, match-parent,
+		justify-all;
+	letter-spacing: 1px;
+	line-height: 10px;
+}
+
+/* Animations */
+.animaton {
+	/* If font is defined in parent, body, * - used inherit*/
+	fill-opacity: 30%;
+	/* Decimal value*/
+	opacity: 0.4;
+	/* Cursor - SELECT ITEM */
+	cursor: pointer;
+	/* Transform - cna be + or -  */
+	transform: translateY(100%);
+	transform: translateY(100%);
+	transform: translate(0, -80%);
+	transition: transform 0.3s ease-in;
+	/* ON HOVER ....  */
+	transform: translateY(0);
+}
+
+/* 
+attribute styling */
+header form input::placeholder {
+	color: teal;
+}
+
+/* SIMPLE USE CASE  */
+.grid-container {
+	display: grid;
+	/* DEFINE NO OF COLOUMNS */
+
+	/* Portion Relative - 4 cols */
+	grid-template-columns: 1fr 1fr 2fr;
+	/*   4 equal cols */
+	grid-template-columns: repeat(4, 100px);
+
+	/* DEFINE SIZE OF ROWS */
+
+	/* Seperate Vals */
+	grid-template-rows: 100px 200px;
+	/* Same Vals - Appied as Default, can be overwriten by above*/
+	grid-auto-rows: 100px;
+	/* Same Vals - But allows for flexbility */
+	grid-auto-rows: minmax(100px, auto);
+
+	/* Row spacing - element margin spacing  */
+	grid-row-gap: 20px;
+	grid-column-gap: 20px;
+	/* Apply both  */
+	grid-gap: 20px;
+}
+
+/* GRID TEMPLATE AREAS */
+.grid-container {
+	display: grid;
+	/* DEFINE NO OF COLOUMNS */
+
+	/* grid areas - header - takes up 2 rows */
+	grid-template-areas:
+		'header header'
+		'sidebar content'
+		'sidebar content';
+
+	/* This element will take up two rows */
+	.grid-item-1 {
+		grid-area: header;
+	}
+	/* This element will take up one rows */
+	.grid-item-2 {
+		grid-area: sidebar;
+	}
+
+	/* This element will take up one rows */
+	.grid-item-3 {
+		grid-area: content;
+	}
+}
